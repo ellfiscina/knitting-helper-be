@@ -14,16 +14,16 @@ class Company(models.Model):
 
 class Yarn(models.Model):
     name = models.CharField(max_length=200)
-    weight = models.CharField(max_length=200, null=True)
-    texture = models.CharField(max_length=200, null=True)
-    grams = models.IntegerField(default=0, null=True)
-    yardage = models.IntegerField(default=0, null=True)
-    min_gauge = models.IntegerField(default=0, null=True)
-    max_gauge = models.IntegerField(default=0, null=True)
-    gauge_divisor = models.IntegerField(default=0, null=True)
+    weight = models.CharField(max_length=200, null=True, blank=True)
+    texture = models.CharField(max_length=200, null=True, blank=True)
+    grams = models.IntegerField(default=0, null=True, blank=True)
+    yardage = models.IntegerField(default=0, null=True, blank=True)
+    min_gauge = models.IntegerField(default=0, null=True, blank=True)
+    max_gauge = models.IntegerField(default=0, null=True, blank=True)
+    gauge_divisor = models.IntegerField(default=0, null=True, blank=True)
     ravelry_id = models.IntegerField(default=0)
     company = models.ForeignKey('Company', on_delete=models.CASCADE)
-    link = models.URLField(null=True)
+    link = models.URLField(null=True, blank=True)
 
     def get_gauge(self):
         if self.max_gauge and self.max_gauge != self.min_gauge:

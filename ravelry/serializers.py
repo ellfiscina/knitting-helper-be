@@ -22,4 +22,4 @@ class YarnSerializer(serializers.ModelSerializer):
                   'weight',
                   'gauge',
                   'fibers',
-                  'texture']
+                  'texture', 'link']
