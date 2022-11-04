@@ -23,6 +23,7 @@ class Yarn(models.Model):
     gauge_divisor = models.IntegerField(default=0, null=True)
     ravelry_id = models.IntegerField(default=0)
     company = models.ForeignKey('Company', on_delete=models.CASCADE)
+    link = models.URLField(null=True)
 
     def get_gauge(self):
         if self.max_gauge and self.max_gauge != self.min_gauge:

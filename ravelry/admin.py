@@ -13,7 +13,7 @@ class YarnAdmin(admin.ModelAdmin):
                     'yardage',
                     'min_gauge',
                     'max_gauge',
-                    'gauge_divisor', 'company_name')
+                    'gauge_divisor', 'company_name', 'link')
     search_fields = ['name']
 
     def company_name(self, obj):
