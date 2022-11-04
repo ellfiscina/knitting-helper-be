@@ -50,8 +50,13 @@ class FiberAdmin(admin.ModelAdmin):
         return FiberTypes(obj.kind).name
 
 
+class YarnInline(admin.StackedInline):
+    model = Yarn
+
+
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'linde_hobby', 'hobbii')
     list_filter = ('linde_hobby', 'hobbii')
     search_fields = ['name']
+    inlines = [YarnInline]
