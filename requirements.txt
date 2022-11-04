@@ -1,0 +1,5 @@
+Django==3.2.12
+django-environ==0.9.0
+django-filter==22.1
+djangorestframework==3.14.0
+django_cors_headers==3.13.0
